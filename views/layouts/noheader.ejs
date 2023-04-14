@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <title>Old Mutual</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css" />
+    <link rel="stylesheet" href="assets/css/owl.css" />
+    <link href="assets/css/mdb.min.css" rel="stylesheet" /> 
+    <!-- File pond css -->
+    <link rel="stylesheet" href="../filepond/filepond.css">
+    <link rel="stylesheet" href="../filepond/filepond-plugin-image-preview.css">
+    <script defer src="../filepond/filepond-plugin-file-encode.js"></script>
+    <script defer src="../filepond/filepond-plugin-image-preview.js"></script>
+    <script defer src="../filepond/filepond-plugin-image-resize.js"></script>
+    <script defer src="../filepond/filepond.js"></script>
+    <!-- File pond css -->
+    <link href="../../assets/admin/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <%- body %>
+    <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 footer-item">
+            <h4>Old Mutual</h4>
+            <p>
+              Old Mutual Limited (OML) is a licensed Controlling Company of the
+              Designated Old Mutual Limited Insurance Group
+            </p>
+            <ul class="social-icons">
+              <li>
+                <a
+                  rel="nofollow"
+                  href="https://fb.com/templatemo"
+                  target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-google"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>Our Services</h4>
+            <ul class="menu-list">
+              <li><a href="services.html">Savings</a></li>
+              <li><a href="services.html">Investment</a></li>
+              <li><a href="services.html">Loans</a></li>
+              <li><a href="services.html">Insurance</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item">
+            <h4>Additional Pages</h4>
+            <ul class="menu-list">
+              <li><a href="faq.html">FAQ's</a></li>
+              <li><a href="about.html">How We Work</a></li>
+              <li><a href="contact.html">Quick Support</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="about.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer-item last-item">
+            <h4>Contact Us</h4>
+            <div class="contact-form">
+              <form action="/contacts" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="title" type="text" class="form-control" id="name" placeholder="Title"/>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" />
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" placeholder="Your Message"
+                      ></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <button type="submit" class="filled-button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Copyright &copy; 2023 Old Mutual Co. Ltd.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="../../assets/admin/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+    <script defer src="../filepond/fileUpload.js"></script>
+    <script language="text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t) {
+        //declaring the array outside of the
+        if (!cleared[t.id]) {
+          // function makes it static and global
+          cleared[t.id] = 1; // you could use true and false, but that's more typing
+          t.value = ""; // with more chance of typos
+          t.style.color = "#fff";
+        }
+      }
+    </script>
+  </body>
+</html>

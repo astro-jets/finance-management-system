@@ -1,0 +1,182 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Record Expenditure</h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Funds
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <form class="form-horizontal" id="budgetForm" method="post">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-7">
+                        <div class="form-group col-12">
+                            <label class="col-md-3 mt-3">Budget Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="name" id="budgetName" placeholder="Name" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label class="col-6 mt-3">Item Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="item" id="itemName"/>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <label class="col-6 mt-3">Item Cost </label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="cost" id="itemCost"/>
+                                    </div>
+                                </div>
+                                <p class="btn btn-primary col-9 mt-3" id="addBtn">Add</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label class="col-6 mt-3">Start Date</label>
+                                    <div class="col-md-9">
+                                        <input type="date" class="form-control" name="start"/>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <label class="col-6 mt-3">End Date</label>
+                                    <div class="col-md-9">
+                                        <input type="date" class="form-control" name="end"/>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <label for="fname" class="col-6 control-label col-form-label">Maintenance
+                                Description</label>
+                            <div class="col-sm-9">
+                                <textarea name="description" id="" cols="30" rows="15" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5 mt-5">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-0" >Budget List for <span id="budgetTitle"></span> </h4>
+                                    <h5 class="card-title mb-0 text-primary">Total <span id="total">0</span></h5>
+                                </div>
+                                <ul class="list-style-none" id="budgetList">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-top">
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>  
+
+<script>
+    const btn = document.querySelector("#addBtn")
+    const cost = document.querySelector("#itemCost")
+    const item = document.querySelector("#itemName")
+    const budgetList = document.querySelector("#budgetList")
+    const totalCount = document.querySelector("#total")
+    const budgetName = document.querySelector("#budgetName")
+    const budgetTitle = document.querySelector("#budgetTitle")
+    const budgetForm = document.querySelector("#budgetForm")
+
+    const items = []
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault
+        items.push({ item: item.value,cost:cost.value })
+        budgetList.innerHTML += `
+            <li class="d-flex no-block card-body">
+                <i class="mdi mdi-check-circle fs-4 col-1 w-30px mt-1"></i>
+                <div class="col-8">
+                    <p class="mb-0 font-medium p-0">
+                        ${item.value}
+                    </p>
+                </div>
+                <div class=" col-3 ms-auto">
+                    <div class="tetx-right">
+                        <h5 class="text-muted mb-0">${cost.value}</h5>
+                        <span class="text-muted font-16">Kwacha</span>
+                    </div>
+                </div>
+            </li>
+        `;
+        cost.value = '';
+        item.value = '';
+        let total = 0;
+        items.forEach(i=>{
+            total+=parseInt(i.cost)
+        })
+        totalCount.textContent = total;
+    });
+
+    budgetName.addEventListener('keyup',()=>{
+        budgetTitle.textContent = budgetName.value;
+    });
+    budgetForm.addEventListener('submit',async (e)=>{
+        e.preventDefault();
+        const name = budgetForm.name.value;
+        const duration = [budgetForm.start.value,budgetForm.end.value];
+        const description = budgetForm.description.value;
+
+        const budget = {
+            name: name,
+            duration: duration,
+            description:description,
+            items:items
+        };
+        
+        try {
+            const res = await fetch(`/budgets/new/`, {
+                method: 'POST',
+                body: JSON.stringify(budget),
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            const data = await res.json()
+            if(data){
+                totalCount.textContent = ''
+                budgetTitle.textContent = ''
+            }
+        }catch (error) {
+            console.log("Err => ", error.message)
+        }
+    })
+</script>

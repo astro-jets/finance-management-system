@@ -1,0 +1,67 @@
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Budgets</h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Budgets
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+
+
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <div class="col-12">
+            <div class="card p-5">
+                <h5>Budget Description</h5>
+                <p class="text-start col-12">
+                    <%=budget.description%> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus mollitia quos eius nostrum ex temporibus enim aliquid rerum deleniti sed.   
+                </p>
+                <span class="text-muted">Created <%=createdOn%></span>
+                <span class="text-muted">Duration: from <%=duration.start%> to <%=duration.end%></span>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-0">Budget List for <%=budget.name%><span id="budgetTitle"></span> </h4>
+                    <h5 class="card-title mb-0 text-primary">Total <span id="total">K <%=total%></span></h5>
+                </div>
+                <ul class="list-style-none" id="budgetList">
+                    <% budget.items.forEach(i => { %>
+                        <li class="d-flex no-block card-body">
+                            <i class="mdi mdi-check-circle fs-4 col-1 w-30px mt-1"></i>
+                            <div class="col-8">
+                                <p class="mb-0 font-medium p-0">
+                                    <%=i.item%>
+                                </p>
+                            </div>
+                            <div class=" col-3 ms-auto">
+                                <div class="tetx-right">
+                                    <h5 class="text-muted mb-0">K <%=i.cost%></h5>
+                                    <span class="text-muted font-16">Kwacha</span>
+                                </div>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

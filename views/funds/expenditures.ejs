@@ -1,0 +1,199 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Record Expenditure</h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Funds
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#salaries" role="tab">
+                                <span class="hidden-sm-up"></span>
+                                <span class="hidden-xs-down">Salaries</span>
+                                <i class="mdi mdi-cash-multiple"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#assets" role="tab">
+                                <span class="hidden-sm-up"></span>
+                                <span class="hidden-xs-down">Assets</span>
+                                <i class="mdi mdi-readability"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content tabcontent-border">
+                        <div class="tab-pane active" id="salaries" role="tabpanel">
+                            <form class="form-horizontal" action="/expenditure/salary" method="post">
+                                <div class="card-body">
+                                    <div class="row mb-5">
+                                        <div class="col-6 ">
+                                            <label for="grossI" class="col-sm-3 text-end control-label col-form-label">Gross Payment</label>
+                                            <div class="col-md-10">
+                                                <input 
+                                                    type="number" 
+                                                    class="form-control" 
+                                                    id="grossI" 
+                                                    name="gross" 
+                                                    placeholder="Gross Payment" 
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="employment" class="col-sm-3 text-end control-label col-form-label">Employment ID</label>
+                                            <div class="col-md-10">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control" 
+                                                    name="employment" 
+                                                    id="employment" 
+                                                    placeholder="************" 
+                                                    style="letter-spacing: 18px;"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-4">
+                                        <!-- Column -->
+                                        <div class="col-md-6 col-lg-4 col-xlg-3">
+                                            <div class="card card-hover">
+                                                <div class="box bg-primary text-center">
+                                                    <h1 class="font-light text-white">
+                                                        <i class="fas fa-hand-holding-usd"></i>
+                                                    </h1>
+                                                    <h6 class="text-white">Gross Payment</h6>
+                                                    <span 
+                                                        class="text-white"
+                                                        id="gross"
+                                                    >
+                                                        MK 0
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Column -->
+                                        <!-- Column -->
+                                        <div class="col-md-6 col-lg-4 col-xlg-3">
+                                            <div class="card card-hover">
+                                                <div class="box bg-success text-center">
+                                                    <h1 class="font-light text-white">
+                                                        <i class="mdi mdi-anchor"></i>
+                                                    </h1>
+                                                    <h6 class="text-white">Tax (PAYE)</h6>
+                                                    <span class="text-white" id="payee">15%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Column -->
+                                        <!-- Column -->
+                                        <div class="col-md-6 col-lg-4 col-xlg-3">
+                                            <div class="card card-hover">
+                                                <div class="box bg-warning text-center">
+                                                    <h1 class="font-light text-white">
+                                                        <i class="mdi mdi-cash-multiple"></i>
+                                                    </h1>
+                                                    <h6 class="text-white">NET Payment</h6>
+                                                    <span class="text-white" id="net">MK 0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Column -->
+                                    </div> 
+                        
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary col-12">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane" id="assets" role="tabpanel">
+                            <form class="form-horizontal" action="/assets" method="post">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <label for="stuID" class="col-sm-3 text-end control-label col-form-label">Asset Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="stuID" name="name" placeholder="name" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label class="col-md-3 mt-3">Price</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="price" id="fname" placeholder="Price" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <label for="fname" class="col-sm-3 text-end control-label col-form-label">Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea name="description" id="" cols="30" rows="15" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="lname" class="col-sm-3 text-end control-label col-form-label">Thumbnail</label>
+                                            <div class="col-sm-9">
+                                                <input type="file" class=" form-control filepond" name="thumbnail" id="lname" />
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <script>
+        const grossInput = document.querySelector("#grossI")
+        const grossOuput = document.querySelector("#gross")
+        const netOutput = document.querySelector("#net")
+        
+        grossInput.addEventListener("keyup",()=>{
+            grossOuput.textContent = "MK " + grossInput.value;
+            netOutput.textContent = "MK ";
+            netOutput.textContent += parseInt(grossInput.value) - parseInt(grossInput.value) * 0.15;
+        })
+    </script>

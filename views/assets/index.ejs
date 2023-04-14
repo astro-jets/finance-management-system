@@ -1,0 +1,86 @@
+<div class="page-wrapper">
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Tables</h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Funds
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="card-title">
+                    <i class="mdi mdi-cash-multiple"></i>
+                    <span>Assets</span>
+                </h5>
+                <div class="row el-element-overlay">
+                    <% assets.forEach(a => { %>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <div class="el-card-avatar el-overlay-1">
+                                        <img src="<%=a.thumbnail%>" alt="user" style="height: 10rem;" />
+                                        <div class="el-overlay">
+                                            <ul class="list-style-none el-info">
+                                                <li class="el-item">
+                                                    <a class=" btn default btn-outline image-popup-vertical-fit el-link" 
+                                                    href="<%=a.thumbnail%>">
+                                                    <i class="mdi mdi-magnify-plus"></i></a>
+                                                </li>
+                                                <li class="el-item">
+                                                    <a class="btn default btn-outline el-link" href="/assets/delete/<%=a._id%>">
+                                                        <i class="mdi mdi-delete-sweep"></i>
+                                                    </a>
+                                                </li>
+                                                </li>
+                                                <li class="el-item">
+                                                    <a class="btn default btn-outline el-link" href="/assets/edit/<%=a._id%>">
+                                                        <i class="mdi mdi-pencil"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h4 class="mb-0"><%=a.name%></h4>
+                                        <p class="text-start mt-2 p-2">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum beatae reiciendis impedit, dicta odio fuga!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+<script src="../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+<script src="../assets/extra-libs/DataTables/datatables.min.js"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $("#zero_config").DataTable();
+</script>

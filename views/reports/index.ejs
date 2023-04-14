@@ -1,0 +1,177 @@
+<!-- Page wrapper  -->
+<!-- ============================================================== -->
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Reports</h4>
+                <div class="ms-auto text-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Reports
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+
+
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Sales Cards  -->
+        <!-- ============================================================== -->
+        <div class="row">
+        </div>
+        <!-- ============================================================== -->
+        <!-- Sales Cards  -->   
+
+        <div class="col-md-12">    
+            <div class="card">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs px-2 py-5" role="tablist">
+                    <!-- Earnings -->
+                    <li class="card-hover col-3">
+                        <a 
+                        class="nav-link box bg-warning text-center col-11 p-2" 
+                        data-bs-toggle="tab" href="#g1" role="tab">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 class="font-light text-white">
+                                        <i class="mdi mdi-chart-line"></i>
+                                    </h1>
+                                </div>
+                                <div class="col-6 text-center" style="display:flex; justify-content: center; align-items: center;">
+                                    <h5 class="text-white">Yearly Satistics</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Earnings -->
+
+                    <!-- Expenses -->
+                    <li class="card-hover col-3">
+                        <a class="nav-link box bg-primary text-center col-11 p-2" data-bs-toggle="tab" href="#g2" role="tab">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h1 class="font-light text-white">
+                                        <i class="mdi mdi-chart-bar"></i>
+                                    </h1>
+                                </div>
+                                <div class="col-6 text-center" style="display:flex; justify-content: center; align-items: center;">
+                                    <h5 class="text-white">Expenses</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Expenses -->
+
+                    <!-- TAX -->
+                    <li class="card-hover col-3">
+                        <a class="nav-link box bg-success text-center col-11 p-2" data-bs-toggle="tab" href="#g3" role="tab">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h1 class="font-light text-white">
+                                        <i class="mdi mdi-anchor"></i>
+                                    </h1>
+                                </div>
+                                <div class="col-6 text-center" style="display:flex; justify-content: center; align-items: center;">
+                                    <h5 class="text-white">Tax</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- TAX -->
+
+                    <!-- Earnings -->
+                    <li class="card-hover col-3">
+                        <a class="nav-link box bg-info text-center col-11 p-2" data-bs-toggle="tab" href="#g4" role="tab">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h1 class="font-light text-white">
+                                        <i class="mdi mdi-chart-pie"></i>
+                                    </h1>
+                                </div>
+                                <div class="col-6 text-center" style="display:flex; justify-content: center; align-items: center;">
+                                    <h5 class="text-white">Earnings</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Earnings -->
+                    
+                    
+                </ul>
+
+            
+                <!-- Tab panes -->
+                <div class="tab-content tabcontent-border mt-5">
+
+                    <div class="tab-pane active" id="g1" role="tabpanel">
+                        <div class="row">
+                            <div class="container col-lg-12">
+                                <h4 class="col-12 text-center">
+                                    Anum Statistic
+                                </h4>
+                                <div class="col-12 card">
+                                    <canvas id="myAreaChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="g2" role="tabpanel">
+                        <div class="col-12">
+                            <div class="container card col-12 py-2 px-2 rounded">
+                                <h4 class="mb-2 mt-2 col-12 text-center">All time subscriptions</h4>
+                                <div class="card-body col-12">
+                                    <canvas id="myBarChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="g3" role="tabpanel">
+                        <div class="col-12">
+                            <div class="card col-12 py-2 px-2 rounded">
+                                <h4 class="mb-2 mt-2 col-12 text-center">Subscriptions this month</h4>
+                        
+                                <div class="col-12">
+                                    <canvas id="myPieChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="g4" role="tabpanel">
+                        <div class="col-12">
+                            <div class="container card col-12 py-2 px-2 rounded">
+                                <h4 class="mb-2 mt-2 col-12 text-center">All time subscriptions</h4>
+                                <div class="card-body col-12">
+                                    <canvas id="myDonutChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <section class="section">
+            
+        </section>
+        <!-- ============================================================== -->
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Page wrapper  -->
